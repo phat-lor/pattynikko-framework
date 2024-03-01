@@ -1,7 +1,6 @@
-package me.phatlor.web.requset;
+package nikko.pat.webframework.requset;
 
-import me.phatlor.web.application.Application;
-import me.phatlor.web.response.ContentType;
+import nikko.pat.webframework.application.Application;
 
 
 public class RequestParser {

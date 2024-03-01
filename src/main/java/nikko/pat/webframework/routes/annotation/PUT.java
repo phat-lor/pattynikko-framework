@@ -1,4 +1,4 @@
-package me.phatlor.web.routes.annotation;
+package nikko.pat.webframework.routes.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -7,6 +7,6 @@ import java.lang.annotation.Target;
 
 @Retention(value = RetentionPolicy.RUNTIME)
 @Target(value = ElementType.METHOD)
-public @interface GET {
+public @interface PUT {
     String route() default "/";
 }

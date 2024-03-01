@@ -1,13 +1,10 @@
-package me.phatlor.web.requset;
+package nikko.pat.webframework.requset;
 
-import me.phatlor.web.requset.Request;
-import me.phatlor.web.response.ContentType;
-import me.phatlor.web.response.Response;
-import me.phatlor.web.response.StatusCode;
-import me.phatlor.web.routes.Route;
+import nikko.pat.webframework.response.ContentType;
+import nikko.pat.webframework.response.Response;
+import nikko.pat.webframework.response.StatusCode;
+import nikko.pat.webframework.routes.Route;
 
-import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 public class RequestHandler {

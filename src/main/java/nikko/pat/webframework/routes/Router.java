@@ -1,8 +1,8 @@
-package me.phatlor.web.routes;
+package nikko.pat.webframework.routes;
 
 
-import me.phatlor.web.requset.RequestMethod;
-import me.phatlor.web.routes.annotation.*;
+import nikko.pat.webframework.requset.RequestMethod;
+import nikko.pat.webframework.routes.annotation.*;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;

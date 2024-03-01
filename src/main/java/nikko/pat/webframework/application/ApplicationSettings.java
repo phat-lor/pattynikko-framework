@@ -1,4 +1,4 @@
-package me.phatlor.web.application;
+package nikko.pat.webframework.application;
 
 public class ApplicationSettings {
     private int port = 80;

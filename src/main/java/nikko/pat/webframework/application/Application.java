@@ -1,11 +1,11 @@
-package me.phatlor.web.application;
+package nikko.pat.webframework.application;
 
-import me.phatlor.web.requset.Request;
-import me.phatlor.web.requset.RequestHandler;
-import me.phatlor.web.requset.RequestSender;
-import me.phatlor.web.requset.RequestParser;
-import me.phatlor.web.routes.RouteManager;
-import me.phatlor.web.util.Logger;
+import nikko.pat.webframework.requset.Request;
+import nikko.pat.webframework.requset.RequestHandler;
+import nikko.pat.webframework.requset.RequestSender;
+import nikko.pat.webframework.requset.RequestParser;
+import nikko.pat.webframework.routes.RouteManager;
+import nikko.pat.webframework.util.Logger;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

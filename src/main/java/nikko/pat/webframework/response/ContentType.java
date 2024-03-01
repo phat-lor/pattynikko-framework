@@ -1,4 +1,4 @@
-package me.phatlor.web.response;
+package nikko.pat.webframework.response;
 
 public enum ContentType {
     HTML("text/html"),

@@ -1,4 +1,4 @@
-package me.phatlor.web.response;
+package nikko.pat.webframework.response;
 
 public enum StatusCode {
     OK(200),

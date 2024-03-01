@@ -1,6 +1,6 @@
-package me.phatlor.web.util;
+package nikko.pat.webframework.util;
 
-import me.phatlor.web.application.Application;
+import nikko.pat.webframework.application.Application;
 
 import java.io.PrintStream;
 

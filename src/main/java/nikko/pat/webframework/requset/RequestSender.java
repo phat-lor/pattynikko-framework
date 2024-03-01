@@ -1,6 +1,6 @@
-package me.phatlor.web.requset;
+package nikko.pat.webframework.requset;
 
-import me.phatlor.web.application.Application;
+import nikko.pat.webframework.application.Application;
 
 import java.io.BufferedReader;
 import java.io.PrintWriter;

@@ -1,4 +1,4 @@
-package me.phatlor.web.requset;
+package nikko.pat.webframework.requset;
 
 public enum RequestMethod {
     GET,

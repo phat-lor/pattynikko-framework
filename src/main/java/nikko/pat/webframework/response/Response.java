@@ -1,8 +1,6 @@
-package me.phatlor.web.response;
+package nikko.pat.webframework.response;
 
-import me.phatlor.web.application.Application;
-import me.phatlor.web.requset.Request;
-import me.phatlor.web.requset.RequestSender;
+import nikko.pat.webframework.requset.Request;
 
 import java.io.PrintWriter;
 

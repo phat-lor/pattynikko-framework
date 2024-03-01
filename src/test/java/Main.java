@@ -1,5 +1,5 @@
-import me.phatlor.web.application.Application;
-import me.phatlor.web.application.ApplicationSettings;
+import nikko.pat.webframework.application.Application;
+import nikko.pat.webframework.application.ApplicationSettings;
 
 public class Main {
     private static Application app;

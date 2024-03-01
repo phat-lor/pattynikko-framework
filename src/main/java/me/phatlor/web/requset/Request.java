@@ -1,6 +1,10 @@
 package me.phatlor.web.requset;
 
 import me.phatlor.web.application.Application;
+import me.phatlor.web.response.ContentType;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Request {
     private final Application application;
@@ -8,7 +12,8 @@ public class Request {
 
     private RequestMethod method;
     private String route;
-    private String body;
+    private final Map<String, String> headers = new HashMap<>();
+
 
     public Request(Application application, RequestSender client) {
         this.application = application;
@@ -39,12 +44,11 @@ public class Request {
         this.route = route;
     }
 
-    public String getBody() {
-        return body;
+    public Map<String, String> getHeaders() {
+        return headers;
     }
 
-    public void setBody(String body) {
-        this.body = body;
+    public String getHeader(String key) {
+        return headers.get(key);
     }
-
 }

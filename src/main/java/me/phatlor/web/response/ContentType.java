@@ -15,4 +15,13 @@ public enum ContentType {
     public String getValue() {
         return value;
     }
+
+    public static ContentType fromString(String value) {
+        for (ContentType contentType : ContentType.values()) {
+            if (contentType.value.equals(value)) {
+                return contentType;
+            }
+        }
+        return null;
+    }
 }

@@ -12,7 +12,7 @@ public class Request {
     private RequestMethod method;
     private String route;
     private final Map<String, String> headers = new HashMap<>();
-
+    private String body;
 
     public Request(Application application, RequestSender client) {
         this.application = application;
@@ -49,5 +49,13 @@ public class Request {
 
     public String getHeader(String key) {
         return headers.get(key);
+    }
+
+    public String getBody() {
+        return body;
+    }
+
+    public void setBody(String body) {
+        this.body = body;
     }
 }

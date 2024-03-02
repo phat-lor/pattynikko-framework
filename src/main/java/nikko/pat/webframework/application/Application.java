@@ -16,8 +16,8 @@ import java.net.Socket;
 public class Application {
     private final ApplicationSettings settings;
     private final Logger logger;
-    private boolean running = false;
     private final RouteManager routeManager = new RouteManager();
+    private boolean running = false;
 
     public Application(ApplicationSettings settings) {
         this.settings = settings;
@@ -25,9 +25,14 @@ public class Application {
     }
 
     public void start() {
+        Thread applicationThread = new Thread(this::run, "Application-Thread");
+        applicationThread.start();
+    }
+
+    public void run() {
         logger.info("Starting server on port " + settings.getPort());
+        running = true;
         try (ServerSocket serverSocket = new ServerSocket(settings.getPort())) {
-            running = true;
 
             while (running) {
                 // Accept client connection

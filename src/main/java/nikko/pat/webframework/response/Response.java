@@ -6,14 +6,14 @@ import java.io.PrintWriter;
 
 public class Response {
     private final Request request;
-    private StatusCode statusCode;
-    private ContentType contentType;
+    private StatusCode statusCode = StatusCode.OK;
+    private ContentType contentType = ContentType.HTML;
 
     public Response(Request request) {
         this.request = request;
     }
 
-    public void send(String body) throws Exception {
+    public void send(String body) {
         PrintWriter out = request.getSender().getOut();
         out.println("HTTP/1.1 " + statusCode.getCode() + " " + statusCode.name().replaceAll("_", " "));
         out.println("Content-Type: " + contentType.getValue());

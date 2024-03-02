@@ -7,6 +7,7 @@ public class Main {
         ApplicationSettings settings = new ApplicationSettings().setDebug(true).setPort(8080);
         app = new Application(settings);
         app.getRouteManager().addRouter(new TestRouter());
+        app.getRouteManager().addRouter(new CatRouter());
         app.start();
     }
 

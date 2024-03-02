@@ -5,6 +5,7 @@ import nikko.pat.webframework.response.Response;
 import nikko.pat.webframework.response.StatusCode;
 import nikko.pat.webframework.routes.Route;
 
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 public class RequestHandler {
@@ -14,9 +15,8 @@ public class RequestHandler {
         this.request = request;
     }
 
-    public void handle() throws Exception {
+    public void handle() {
         Route route = request.getApplication().getRouteManager().findRoute(request.getRoute(), request.getMethod());
-//        System.out.println(route.getRoute());
         if (route == null) {
             Response response = new Response(request);
             response.setStatusCode(StatusCode.NOT_FOUND);
@@ -26,7 +26,15 @@ public class RequestHandler {
         }
 
         Method method = route.getJavaMethod();
-        method.invoke(route.getRouter(), request, new Response(request));
+        try {
+            method.invoke(route.getRouter(), request, new Response(request));
+        } catch (IllegalAccessException | InvocationTargetException e) {
+            request.getApplication().getLogger().error("Error invoking method: " + e.getMessage(), e);
+            Response response = new Response(request);
+            response.setStatusCode(StatusCode.INTERNAL_SERVER_ERROR);
+            response.setContentType(ContentType.TEXT);
+            response.send("500 Internal Server Error");
+        }
     }
 
     public void send(String response) {

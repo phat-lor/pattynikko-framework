@@ -8,16 +8,19 @@ import nikko.pat.webframework.routes.annotation.POST;
 
 public class TestRouter implements Router {
     @GET(route = "/")
-    public void home(Request request, Response response) throws Exception {
-        response.setStatusCode(StatusCode.BAD_GATEWAY);
+    public void home(Request request, Response response) {
+        request.getHeaders().forEach((key, value) -> System.out.println(key + ": " + value));
+
+        response.setStatusCode(StatusCode.OK);
         response.setContentType(ContentType.HTML);
         response.send("<h1>Hello, World!</h1>");
     }
 
     @POST(route = "/nikko")
-    public void nikko(Request request, Response response) throws Exception {
-        System.out.println(request.getHeaders());
+    public void nikko(Request request, Response response) {
+        request.getHeaders().forEach((key, value) -> System.out.println(key + ": " + value));
+
         response.setContentType(ContentType.JSON);
-        response.send("{\"name\": \"Nikko\"}");
+        response.send("Test");
     }
 }
